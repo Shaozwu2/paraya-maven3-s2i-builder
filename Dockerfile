@@ -33,6 +33,7 @@ COPY ./s2i/bin/ $STI_SCRIPTS_PATH
 RUN curl -fsSL https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/5.182/payara-micro-5.182.jar > payara-micro-5.182.jar
 
 RUN chown -R 1001:0 /opt/app-root
+RUN chmod +x assemble run save-artifacts usage
 USER 1001
 
 # Set the default CMD to print the usage of the language image
